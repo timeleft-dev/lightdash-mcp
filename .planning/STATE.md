@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-10)
 ## Current Position
 
 Phase: 4 of 4 (GitHub Publication & README) -- v1.1 milestone
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-02-10 -- v1.1 roadmap created
+Plan: 2 of 2 in current phase
+Status: Complete (pending push verification)
+Last activity: 2026-02-10 -- README and LICENSE written
 
-Progress: [########..] 80% (8 plans complete across v1.0, phase 4 plans TBD)
+Progress: [##########] 100% (10 plans complete across v1.0 + v1.1)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
-- Average duration: 1.6min
-- Total execution time: 0.20 hours
+- Total plans completed: 10
+- Average duration: 1.7min
+- Total execution time: 0.28 hours
 
 **By Phase:**
 
@@ -30,9 +30,10 @@ Progress: [########..] 80% (8 plans complete across v1.0, phase 4 plans TBD)
 | 01-foundation | 3 | 5min | 1.7min |
 | 02-discovery-tools | 2 | 3min | 1.5min |
 | 03-data-access-deployment | 3 | 7min | 2.3min |
+| 04-github-publication-readme | 2 | 2min | 1.0min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (1min), 03-01 (2min), 03-02 (2min), 03-03 (3min)
+- Last 5 plans: 03-01 (2min), 03-02 (2min), 03-03 (3min), 04-01 (1min), 04-02 (2min)
 - Trend: Steady
 
 *Updated after each plan completion*
@@ -45,17 +46,20 @@ Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
 - [v1.1 Roadmap]: Single phase (Phase 4) for all 8 v1.1 requirements -- repo setup and docs are tightly coupled (README needs repo, repo needs README)
+- [04-02]: README written for non-engineers with dual JSON config examples
+- [04-02]: Troubleshooting uses expandable details/summary HTML sections
+- [04-02]: MIT license year 2025, copyright Mikhail Gasanov
 
 ### Pending Todos
 
-None yet.
+- Push README and LICENSE to GitHub (git push origin main -- needs credential setup)
 
 ### Blockers/Concerns
 
-None yet.
+- Git push requires HTTPS credentials or SSH access to timeleft-dev org. User must push manually.
 
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: v1.1 roadmap created, ready to plan phase 4
+Stopped at: Completed 04-02-PLAN.md (Tasks 1-2 done, Task 3 checkpoint pending push)
 Resume file: None
