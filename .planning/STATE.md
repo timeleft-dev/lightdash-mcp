@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Clean, filtered Lightdash data access through MCP -- every tool returns only the fields Claude needs, never raw API dumps.
-**Current focus:** Phase 3: Data Access & Deployment -- COMPLETE
+**Current focus:** v1.1 Distribution & Docs -- Defining requirements
 
 ## Current Position
 
-Phase: 3 of 3 (Data Access & Deployment)
-Plan: 3 of 3 in current phase -- COMPLETE
-Status: All phases complete. Project fully deployed.
-Last activity: 2026-02-10 -- Completed 03-03 (Deploy Script & Claude Desktop Integration)
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements for v1.1
+Last activity: 2026-02-10 -- Milestone v1.1 started
 
-Progress: [##########] 100%
+Progress: [..........] 0%
 
 ## Performance Metrics
 

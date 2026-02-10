@@ -32,7 +32,14 @@ Clean, filtered Lightdash data access through MCP — every tool returns only th
 
 ### Active
 
-(None — v1.0 shipped all requirements)
+#### Current Milestone: v1.1 Distribution & Docs
+
+**Goal:** Make the project installable by non-engineers via GitHub + beginner-friendly README.
+
+**Target features:**
+- GitHub repository (`lightdash-mcp`) with proper .gitignore and package metadata
+- Beginner-friendly README with step-by-step installation for Claude Desktop users
+- Optional preferences guide for CSV output and chart artifacts
 
 ### Out of Scope
 
@@ -73,4 +80,4 @@ Deployed to ~/lightdash-mcp/ via deploy.sh. User confirmed working with Claude D
 | Row flattening (val?.value?.raw) | Compact LLM-friendly output from nested Lightdash format | ✓ Good |
 
 ---
-*Last updated: 2026-02-10 after v1.0 milestone*
+*Last updated: 2026-02-10 after v1.1 milestone start*
