@@ -56,10 +56,10 @@ Plans:
   2. README contains tools reference table, troubleshooting section, manual install alternative, and user preferences section -- all under 200 lines total
   3. `npx -y lightdash-mcp` starts the MCP server successfully (verified with dummy env vars)
   4. All changes are committed and pushed to GitHub
-**Plans**: TBD
+**Plans:** 1 plan
 
 Plans:
-- [ ] 06-01: TBD
+- [ ] 06-01-PLAN.md — Rewrite README for npx-first setup, verify npx startup, commit and push
 
 ## Progress
 
