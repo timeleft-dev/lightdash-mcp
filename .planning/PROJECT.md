@@ -37,7 +37,15 @@ Clean, filtered Lightdash data access through MCP — every tool returns only th
 
 ### Active
 
-(None — v1.1 shipped all requirements)
+**Current Milestone: v1.2 npm Distribution**
+
+**Goal:** Publish to npm so users install via `npx -y lightdash-mcp` instead of cloning.
+
+**Target features:**
+- npm publish with `lightdash-mcp` package name
+- package.json metadata (engines/keywords/repository/license/bin/files)
+- README rewrite: npx-first, under 200 lines, non-engineer audience
+- Verify npx install works end-to-end
 
 ### Out of Scope
 
@@ -81,4 +89,4 @@ Public repo: github.com/timeleft-dev/lightdash-mcp. User confirmed working with 
 | Expandable troubleshooting sections | Keeps README clean while covering 6 common issues | ✓ Good |
 
 ---
-*Last updated: 2026-02-10 after v1.1 milestone*
+*Last updated: 2026-02-10 after v1.2 milestone start*

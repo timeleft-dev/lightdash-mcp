@@ -5,16 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Clean, filtered Lightdash data access through MCP -- every tool returns only the fields Claude needs, never raw API dumps.
-**Current focus:** v1.1 complete — planning next milestone
+**Current focus:** v1.2 npm Distribution
 
 ## Current Position
 
-Phase: All complete (v1.0 + v1.1)
+Phase: Not started (defining requirements)
 Plan: —
-Status: v1.1 milestone archived. Ready for next milestone.
-Last activity: 2026-02-10 -- v1.1 milestone completed and archived
-
-Progress: [##########] 100% (10 plans complete across v1.0 + v1.1)
+Status: Defining requirements
+Last activity: 2026-02-10 — Milestone v1.2 started
 
 ## Performance Metrics
 
@@ -61,5 +59,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Phase 4 complete, v1.1 milestone complete
+Stopped at: Milestone v1.2 started, defining requirements
 Resume file: None
