@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-02-10)
 ## Current Position
 
 Phase: 1 of 3 (Foundation & Stdio Infrastructure)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: Executing
-Last activity: 2026-02-10 -- Completed 01-01 (project scaffolding and foundation modules)
+Last activity: 2026-02-10 -- Completed 01-02 (LightdashClient HTTP client)
 
-Progress: [###░░░░░░░] 11%
+Progress: [####░░░░░░] 22%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 2min
-- Total execution time: 0.03 hours
+- Total plans completed: 2
+- Average duration: 1.5min
+- Total execution time: 0.05 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-foundation | 1 | 2min | 2min |
+| 01-foundation | 2 | 3min | 1.5min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2min)
-- Trend: Starting
+- Last 5 plans: 01-01 (2min), 01-02 (1min)
+- Trend: Accelerating
 
 *Updated after each plan completion*
 
@@ -47,6 +47,8 @@ Recent decisions affecting current work:
 - [01-01]: Node16 module/moduleResolution (not NodeNext) for stable ESM
 - [01-01]: ES2022 target for stable built-in fetch and AbortSignal.timeout
 - [01-01]: console.log override with [redirected] prefix for stdout safety
+- [01-02]: No new dependencies for HTTP client -- built-in fetch + AbortSignal.timeout from ES2022
+- [01-02]: Debug logging shows method + relative path only, never base URL or API key
 
 ### Pending Todos
 
@@ -59,5 +61,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Completed 01-01-PLAN.md
+Stopped at: Completed 01-02-PLAN.md
 Resume file: None
