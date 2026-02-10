@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Stdio Infrastructure** - API client, transport, error handling, response filtering -- no tools yet ✓ (2026-02-10)
 - [x] **Phase 2: Discovery Tools** - 5 tools for navigating Lightdash projects, charts, dashboards, spaces, explores ✓ (2026-02-10)
-- [ ] **Phase 3: Data Access & Deployment** - 4 tools for chart data, explore schemas, ad-hoc queries, plus build and deploy
+- [x] **Phase 3: Data Access & Deployment** - 4 tools for chart data, explore schemas, ad-hoc queries, plus build and deploy ✓ (2026-02-10)
 
 ## Phase Details
 
@@ -63,9 +63,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01-PLAN.md -- Phase 3 types, lightdash_get_chart, and lightdash_get_chart_results tools
-- [ ] 03-02-PLAN.md -- lightdash_get_explore, lightdash_run_raw_query tools, and all 10 tool registrations
-- [ ] 03-03-PLAN.md -- Deploy script, build verification, and Claude Desktop config checkpoint
+- [x] 03-01-PLAN.md -- Phase 3 types, lightdash_get_chart, and lightdash_get_chart_results tools
+- [x] 03-02-PLAN.md -- lightdash_get_explore, lightdash_run_raw_query tools, and all 10 tool registrations
+- [x] 03-03-PLAN.md -- Deploy script, build verification, and Claude Desktop config checkpoint
 
 ## Progress
 
@@ -76,4 +76,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 |-------|----------------|--------|-----------|
 | 1. Foundation & Stdio Infrastructure | 3/3 | ✓ Complete | 2026-02-10 |
 | 2. Discovery Tools | 2/2 | ✓ Complete | 2026-02-10 |
-| 3. Data Access & Deployment | 0/3 | Not started | - |
+| 3. Data Access & Deployment | 3/3 | ✓ Complete | 2026-02-10 |
