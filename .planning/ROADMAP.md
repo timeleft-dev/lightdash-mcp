@@ -28,11 +28,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. API client successfully authenticates to Lightdash (ApiKey header), auto-appends /api/v1 to base URL, unwraps { results } envelope, and respects timeouts (30s default, 60s for queries)
   4. A test tool response demonstrates server-side field filtering (raw payload reduced to essential fields only) and tools use lightdash_ prefix with readOnlyHint: true annotation
   5. Errors returned to Claude include isError: true with actionable hints, never exposing API keys, internal URLs, or stack traces
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Project scaffolding, stdout guards, logger, error types, and wrapToolHandler
+- [ ] 01-02-PLAN.md -- LightdashClient with auth, URL normalization, envelope unwrapping, and timeouts
+- [ ] 01-03-PLAN.md -- Server entry point, lightdash_ping smoke-test tool, and TypeScript compilation
 
 ### Phase 2: Discovery Tools
 **Goal**: Claude can discover and navigate everything in Lightdash -- projects, spaces, charts, dashboards, and explores -- through 5 filtered MCP tools.
@@ -72,6 +73,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Stdio Infrastructure | 0/TBD | Not started | - |
+| 1. Foundation & Stdio Infrastructure | 0/3 | Planned | - |
 | 2. Discovery Tools | 0/TBD | Not started | - |
 | 3. Data Access & Deployment | 0/TBD | Not started | - |
