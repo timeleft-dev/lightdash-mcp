@@ -31,9 +31,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Project scaffolding, stdout guards, logger, error types, and wrapToolHandler
-- [ ] 01-02-PLAN.md -- LightdashClient with auth, URL normalization, envelope unwrapping, and timeouts
-- [ ] 01-03-PLAN.md -- Server entry point, lightdash_ping smoke-test tool, and TypeScript compilation
+- [x] 01-01-PLAN.md -- Project scaffolding, stdout guards, logger, error types, and wrapToolHandler
+- [x] 01-02-PLAN.md -- LightdashClient with auth, URL normalization, envelope unwrapping, and timeouts
+- [x] 01-03-PLAN.md -- Server entry point, lightdash_ping smoke-test tool, and TypeScript compilation
 
 ### Phase 2: Discovery Tools
 **Goal**: Claude can discover and navigate everything in Lightdash -- projects, spaces, charts, dashboards, and explores -- through 5 filtered MCP tools.
@@ -44,11 +44,11 @@ Plans:
   2. User can call lightdash_search_charts(projectUuid, query) with a search term and receive case-insensitive matches with only uuid, name, spaceName, chartType, chartKind, updatedAt, slug per result (server-side filter reduces 413KB payload to compact response)
   3. User can call lightdash_list_spaces, lightdash_list_dashboards, and lightdash_list_explores to browse project contents with filtered summary responses
   4. All 5 discovery tools are callable via MCP Inspector and each response stays compact (no raw API dumps)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
+- [ ] 02-01-PLAN.md -- Phase 2 response types, list_projects tool, and list_spaces tool
+- [ ] 02-02-PLAN.md -- search_charts with server-side filtering, list_dashboards with optional query, list_explores with error handling
 
 ### Phase 3: Data Access & Deployment
 **Goal**: Claude can retrieve chart configs, execute saved charts, inspect explore schemas, run ad-hoc queries against Lightdash, and the server is compiled and deployed for Claude Desktop use.
@@ -74,5 +74,5 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Stdio Infrastructure | 3/3 | ✓ Complete | 2026-02-10 |
-| 2. Discovery Tools | 0/TBD | Not started | - |
+| 2. Discovery Tools | 0/2 | In progress | - |
 | 3. Data Access & Deployment | 0/TBD | Not started | - |
