@@ -60,11 +60,12 @@ Plans:
   3. User can call lightdash_run_raw_query with dimensions, metrics, and optional native Lightdash filters/sorts/limit to execute ad-hoc queries and receive result rows
   4. TypeScript source compiles to build/ directory and a deploy script copies compiled output plus dependencies to ~/lightdash-mcp/
   5. Claude Desktop can be configured with the server and a full discovery-to-query workflow works end-to-end (list projects -> search charts -> get results; or list explores -> get explore -> run raw query)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md -- Phase 3 types, lightdash_get_chart, and lightdash_get_chart_results tools
+- [ ] 03-02-PLAN.md -- lightdash_get_explore, lightdash_run_raw_query tools, and all 10 tool registrations
+- [ ] 03-03-PLAN.md -- Deploy script, build verification, and Claude Desktop config checkpoint
 
 ## Progress
 
@@ -75,4 +76,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 |-------|----------------|--------|-----------|
 | 1. Foundation & Stdio Infrastructure | 3/3 | ✓ Complete | 2026-02-10 |
 | 2. Discovery Tools | 2/2 | ✓ Complete | 2026-02-10 |
-| 3. Data Access & Deployment | 0/TBD | Not started | - |
+| 3. Data Access & Deployment | 0/3 | Not started | - |
