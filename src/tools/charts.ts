@@ -1,16 +1,15 @@
 /**
- * Discovery tool: lightdash_search_charts (DISC-03)
+ * Chart tools: lightdash_search_charts (DISC-03), lightdash_get_chart (DATA-01)
  *
- * Searches saved charts in a Lightdash project by name.
- * Server-side case-insensitive filtering compresses 413KB+ payloads
- * down to compact filtered results with only essential fields.
+ * lightdash_search_charts: Searches saved charts in a Lightdash project by name.
+ * lightdash_get_chart: Retrieves full configuration of a saved chart.
  */
 
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { LightdashClient } from "../client.js";
 import { wrapToolHandler } from "../errors.js";
-import type { LightdashChartSummary } from "../types.js";
+import type { LightdashChartSummary, SavedChartResponse } from "../types.js";
 
 /**
  * Register the lightdash_search_charts tool on the MCP server.
@@ -72,6 +71,66 @@ export function registerSearchChartsTool(
           updatedAt: c.updatedAt,
           slug: c.slug,
         }));
+
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: JSON.stringify(filtered, null, 2),
+            },
+          ],
+        };
+      },
+    ),
+  );
+}
+
+/**
+ * Register the lightdash_get_chart tool on the MCP server.
+ * Retrieves the full configuration of a saved chart by UUID.
+ */
+export function registerGetChartTool(
+  server: McpServer,
+  client: LightdashClient,
+): void {
+  server.registerTool(
+    "lightdash_get_chart",
+    {
+      title: "Get Chart",
+      description:
+        "Get the full configuration of a saved chart including its query definition, chart type, and table name. Use the chartUuid from lightdash_search_charts.",
+      annotations: {
+        readOnlyHint: true,
+        destructiveHint: false,
+      },
+      inputSchema: {
+        chartUuid: z
+          .string()
+          .describe("UUID of the saved chart (from lightdash_search_charts)"),
+      },
+    },
+    wrapToolHandler(
+      async ({ chartUuid }: { chartUuid: string }) => {
+        const chart = await client.get<SavedChartResponse>(
+          `/saved/${chartUuid}`,
+        );
+
+        // Filter to essential fields only
+        const filtered = {
+          uuid: chart.uuid,
+          name: chart.name,
+          description: chart.description,
+          tableName: chart.tableName,
+          spaceName: chart.spaceName,
+          chartType: chart.chartConfig?.type,
+          metricQuery: {
+            dimensions: chart.metricQuery.dimensions,
+            metrics: chart.metricQuery.metrics,
+            filters: chart.metricQuery.filters,
+            sorts: chart.metricQuery.sorts,
+            limit: chart.metricQuery.limit,
+          },
+        };
 
         return {
           content: [
