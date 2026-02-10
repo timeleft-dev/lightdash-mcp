@@ -42,10 +42,10 @@
   2. package.json contains bin, files, engines, keywords, repository, and license fields with no "private" field
   3. build/index.js starts with `#!/usr/bin/env node` shebang line
   4. `npx -y lightdash-mcp` downloads and starts the server process
-**Plans**: TBD
+**Plans:** 1 plan
 
 Plans:
-- [ ] 05-01: TBD
+- [ ] 05-01-PLAN.md — Add engines field, npm login, publish to npm registry
 
 ### Phase 6: README Rewrite & Verification
 **Goal**: README speaks to non-engineers with npx-first install and the full workflow is verified end-to-end
@@ -69,5 +69,5 @@ Plans:
 | 2. Discovery Tools | v1.0 | 2/2 | Complete | 2026-02-10 |
 | 3. Data Access & Deployment | v1.0 | 3/3 | Complete | 2026-02-10 |
 | 4. GitHub Publication & README | v1.1 | 2/2 | Complete | 2026-02-10 |
-| 5. npm Package & Publish | v1.2 | 0/? | Not started | - |
+| 5. npm Package & Publish | v1.2 | 0/1 | Planning | - |
 | 6. README Rewrite & Verification | v1.2 | 0/? | Not started | - |
