@@ -5,32 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Clean, filtered Lightdash data access through MCP -- every tool returns only the fields Claude needs, never raw API dumps.
-**Current focus:** Phase 1: Foundation & Stdio Infrastructure
+**Current focus:** Phase 2: Discovery Tools
 
 ## Current Position
 
-Phase: 1 of 3 (Foundation & Stdio Infrastructure) -- COMPLETE
-Plan: 3 of 3 in current phase -- ALL PLANS COMPLETE
-Status: Phase Complete
-Last activity: 2026-02-10 -- Completed 01-03 (Server entry point and ping tool)
+Phase: 2 of 3 (Discovery Tools)
+Plan: 1 of 2 in current phase -- COMPLETE
+Status: Executing
+Last activity: 2026-02-10 -- Completed 02-01 (Projects & Spaces discovery tools)
 
-Progress: [###░░░░░░░] 33%
+Progress: [#####░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 1.7min
-- Total execution time: 0.08 hours
+- Total plans completed: 4
+- Average duration: 1.8min
+- Total execution time: 0.12 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation | 3 | 5min | 1.7min |
+| 02-discovery-tools | 1 | 2min | 2min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2min), 01-02 (1min), 01-03 (2min)
+- Last 5 plans: 01-01 (2min), 01-02 (1min), 01-03 (2min), 02-01 (2min)
 - Trend: Steady
 
 *Updated after each plan completion*
@@ -52,6 +53,8 @@ Recent decisions affecting current work:
 - [01-03]: Inline console.log override in index.ts rather than calling setupStdoutGuard() for guaranteed pre-import execution
 - [01-03]: Tool files export registerXTool(server, client) functions -- clean registration pattern for Phase 2
 - [01-03]: Used import type for McpServer in tool files since only needed for type annotations
+- [02-01]: Used type field (DEFAULT/PREVIEW) instead of warehouseType on list projects endpoint since warehouseType is not on the summary response
+- [02-01]: Added all 5 Phase 2 interfaces upfront so Plan 02 does not need to modify types.ts
 
 ### Pending Todos
 
@@ -64,5 +67,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Completed 01-03-PLAN.md -- Phase 01 complete
+Stopped at: Completed 02-01-PLAN.md
 Resume file: None
