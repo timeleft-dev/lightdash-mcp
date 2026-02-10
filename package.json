@@ -12,6 +12,14 @@
     "model-context-protocol",
     "business-intelligence"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timeleft-dev/lightdash-mcp.git"
+  },
+  "homepage": "https://github.com/timeleft-dev/lightdash-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/timeleft-dev/lightdash-mcp/issues"
+  },
   "bin": {
     "lightdash-mcp": "./build/index.js"
   },
