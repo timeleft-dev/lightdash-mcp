@@ -12,7 +12,7 @@ Build a TypeScript MCP server that gives Claude Desktop clean, filtered access t
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & Stdio Infrastructure** - API client, transport, error handling, response filtering -- no tools yet
+- [x] **Phase 1: Foundation & Stdio Infrastructure** - API client, transport, error handling, response filtering -- no tools yet ✓ (2026-02-10)
 - [ ] **Phase 2: Discovery Tools** - 5 tools for navigating Lightdash projects, charts, dashboards, spaces, explores
 - [ ] **Phase 3: Data Access & Deployment** - 4 tools for chart data, explore schemas, ad-hoc queries, plus build and deploy
 
@@ -73,6 +73,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Stdio Infrastructure | 0/3 | Planned | - |
+| 1. Foundation & Stdio Infrastructure | 3/3 | ✓ Complete | 2026-02-10 |
 | 2. Discovery Tools | 0/TBD | Not started | - |
 | 3. Data Access & Deployment | 0/TBD | Not started | - |
