@@ -28,7 +28,7 @@
 
 **Milestone Goal:** Publish to npm so users install via `npx -y lightdash-mcp` instead of cloning.
 
-- [ ] **Phase 5: npm Package & Publish** — Package metadata, shebang, publish to npm registry
+- [x] **Phase 5: npm Package & Publish** (1/1 plans) — completed 2026-02-10
 - [ ] **Phase 6: README Rewrite & Verification** — Rewrite README for npx-first non-engineer audience, verify end-to-end
 
 ## Phase Details
@@ -45,7 +45,7 @@
 **Plans:** 1 plan
 
 Plans:
-- [ ] 05-01-PLAN.md — Add engines field, npm login, publish to npm registry
+- [x] 05-01-PLAN.md — Add engines field, npm login, publish to npm registry
 
 ### Phase 6: README Rewrite & Verification
 **Goal**: README speaks to non-engineers with npx-first install and the full workflow is verified end-to-end
@@ -69,5 +69,5 @@ Plans:
 | 2. Discovery Tools | v1.0 | 2/2 | Complete | 2026-02-10 |
 | 3. Data Access & Deployment | v1.0 | 3/3 | Complete | 2026-02-10 |
 | 4. GitHub Publication & README | v1.1 | 2/2 | Complete | 2026-02-10 |
-| 5. npm Package & Publish | v1.2 | 0/1 | Planning | - |
+| 5. npm Package & Publish | v1.2 | 1/1 | Complete | 2026-02-10 |
 | 6. README Rewrite & Verification | v1.2 | 0/? | Not started | - |

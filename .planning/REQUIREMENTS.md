@@ -9,10 +9,10 @@ Requirements for npm distribution milestone. Each maps to roadmap phases.
 
 ### Package
 
-- [ ] **PKG-01**: User can install via `npx -y lightdash-mcp` (npm package published as `lightdash-mcp`)
-- [ ] **PKG-02**: package.json has bin, files, engines, keywords, repository, license fields (no "private" field)
-- [ ] **PKG-03**: build/index.js starts with `#!/usr/bin/env node` shebang
-- [ ] **PKG-04**: `npm publish --access public` succeeds and package is live on npmjs.com
+- [x] **PKG-01**: User can install via `npx -y lightdash-mcp` (npm package published as `lightdash-mcp`)
+- [x] **PKG-02**: package.json has bin, files, engines, keywords, repository, license fields (no "private" field)
+- [x] **PKG-03**: build/index.js starts with `#!/usr/bin/env node` shebang
+- [x] **PKG-04**: `npm publish --access public` succeeds and package is live on npmjs.com
 
 ### Documentation
 
@@ -48,10 +48,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PKG-01 | Phase 5 | Pending |
-| PKG-02 | Phase 5 | Pending |
-| PKG-03 | Phase 5 | Pending |
-| PKG-04 | Phase 5 | Pending |
+| PKG-01 | Phase 5 | Complete |
+| PKG-02 | Phase 5 | Complete |
+| PKG-03 | Phase 5 | Complete |
+| PKG-04 | Phase 5 | Complete |
 | DOC-01 | Phase 6 | Pending |
 | DOC-02 | Phase 6 | Pending |
 | DOC-03 | Phase 6 | Pending |
@@ -68,4 +68,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-10*
-*Last updated: 2026-02-10 after roadmap creation*
+*Last updated: 2026-02-10 after Phase 5 complete*
