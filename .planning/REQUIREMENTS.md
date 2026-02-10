@@ -1,0 +1,109 @@
+# Requirements: Lightdash MCP Server
+
+**Defined:** 2026-02-10
+**Core Value:** Clean, filtered Lightdash data access through MCP — every tool returns only the fields Claude needs, never raw API dumps.
+
+## v1 Requirements
+
+Requirements for initial release. Each maps to roadmap phases.
+
+### Infrastructure
+
+- [ ] **INFRA-01**: Server uses @modelcontextprotocol/sdk with stdio transport, producing zero non-JSON-RPC output on stdout
+- [ ] **INFRA-02**: Server reads LIGHTDASH_API_KEY and LIGHTDASH_API_URL from environment variables and fails fast with clear stderr error if either is missing
+- [ ] **INFRA-03**: Server auto-appends /api/v1 to LIGHTDASH_API_URL if not already present
+- [ ] **INFRA-04**: All Lightdash API requests include Authorization: ApiKey <token> header
+- [ ] **INFRA-05**: All Lightdash API responses unwrap the { results: ... } envelope before returning data
+- [ ] **INFRA-06**: All tool responses apply server-side field filtering to minimize payload size
+- [ ] **INFRA-07**: Tool errors return isError: true with actionable recovery hints (not thrown exceptions)
+- [ ] **INFRA-08**: All HTTP requests include timeouts (30s default, 60s for query execution)
+- [ ] **INFRA-09**: Error messages never expose API keys, internal URLs, or stack traces
+- [ ] **INFRA-10**: All tools use lightdash_ prefix for disambiguation (e.g., lightdash_search_charts)
+- [ ] **INFRA-11**: All tools annotated with readOnlyHint: true
+
+### Discovery Tools
+
+- [ ] **DISC-01**: User can list all projects via lightdash_list_projects, receiving only name, uuid, and warehouseType per project
+- [ ] **DISC-02**: User can list spaces in a project via lightdash_list_spaces(projectUuid)
+- [ ] **DISC-03**: User can search charts by name via lightdash_search_charts(projectUuid, query), receiving only uuid, name, spaceName, chartType, chartKind, updatedAt, slug per match (case-insensitive server-side filter)
+- [ ] **DISC-04**: User can list dashboards via lightdash_list_dashboards(projectUuid, query?) with optional name filter, receiving summary only
+- [ ] **DISC-05**: User can list explores via lightdash_list_explores(projectUuid), receiving only name, label, description, tags per explore
+
+### Data Access Tools
+
+- [ ] **DATA-01**: User can get full chart config via lightdash_get_chart(chartUuid)
+- [ ] **DATA-02**: User can get chart query results via lightdash_get_chart_results(chartUuid)
+- [ ] **DATA-03**: User can get full explore schema via lightdash_get_explore(projectUuid, exploreName)
+- [ ] **DATA-04**: User can run ad-hoc queries via lightdash_run_raw_query(projectUuid, exploreName, dimensions, metrics, filters?, sorts?, limit?) using native Lightdash filter/sort format
+
+### Build & Deploy
+
+- [ ] **BLDP-01**: TypeScript source compiles via tsc to build/ directory
+- [ ] **BLDP-02**: Deploy script copies compiled output + dependencies to ~/lightdash-mcp/
+- [ ] **BLDP-03**: Claude Desktop config documented with correct command, args, and env vars
+
+## v2 Requirements
+
+Deferred to future release. Tracked but not in current roadmap.
+
+### Enhanced Responses
+
+- **RESP-01**: CSV output mode for tabular data (saves ~29% tokens vs JSON)
+- **RESP-02**: Pagination controls with explicit limit/offset on list endpoints
+- **RESP-03**: Dashboard detail retrieval (lightdash_get_dashboard with tiles, filters, layout)
+
+### Optimization
+
+- **OPT-01**: Metadata caching with TTL for list endpoints
+- **OPT-02**: Prompt templates for common analytics workflows
+
+## Out of Scope
+
+| Feature | Reason |
+|---------|--------|
+| Write operations (create/update/delete charts, dashboards) | No governance model for LLM-initiated mutations to BI artifacts |
+| HTTP/SSE transport | Stdio only for Claude Desktop; doubles transport surface area |
+| OAuth / multi-auth | PAT is the Lightdash-recommended API auth method |
+| Custom filter abstraction | Leaky abstraction; native Lightdash format is well-documented |
+| Caching layer | Adds state management complexity; Lightdash's own caching handles repeated queries |
+| Catalog/metrics catalog endpoints | Covered by list_explores + get_explore; avoids tool proliferation |
+| Charts/dashboards-as-code | DevOps concern, not analytics |
+
+## Traceability
+
+Which phases cover which requirements. Updated during roadmap creation.
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| INFRA-01 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Pending |
+| INFRA-03 | Phase 1 | Pending |
+| INFRA-04 | Phase 1 | Pending |
+| INFRA-05 | Phase 1 | Pending |
+| INFRA-06 | Phase 1 | Pending |
+| INFRA-07 | Phase 1 | Pending |
+| INFRA-08 | Phase 1 | Pending |
+| INFRA-09 | Phase 1 | Pending |
+| INFRA-10 | Phase 1 | Pending |
+| INFRA-11 | Phase 1 | Pending |
+| DISC-01 | Phase 2 | Pending |
+| DISC-02 | Phase 2 | Pending |
+| DISC-03 | Phase 2 | Pending |
+| DISC-04 | Phase 2 | Pending |
+| DISC-05 | Phase 2 | Pending |
+| DATA-01 | Phase 3 | Pending |
+| DATA-02 | Phase 3 | Pending |
+| DATA-03 | Phase 3 | Pending |
+| DATA-04 | Phase 3 | Pending |
+| BLDP-01 | Phase 1 | Pending |
+| BLDP-02 | Phase 3 | Pending |
+| BLDP-03 | Phase 3 | Pending |
+
+**Coverage:**
+- v1 requirements: 23 total
+- Mapped to phases: 23
+- Unmapped: 0 ✓
+
+---
+*Requirements defined: 2026-02-10*
+*Last updated: 2026-02-10 after initial definition*
