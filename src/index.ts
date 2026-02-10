@@ -13,6 +13,8 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { LightdashClient } from "./client.js";
 import { log } from "./logger.js";
 import { registerPingTool } from "./tools/ping.js";
+import { registerListProjectsTool } from "./tools/projects.js";
+import { registerListSpacesTool } from "./tools/spaces.js";
 
 // Environment validation -- fail fast with clear guidance (INFRA-02)
 const apiKey = process.env.LIGHTDASH_API_KEY;
@@ -39,6 +41,8 @@ const client = new LightdashClient({ baseUrl: apiUrl, apiKey });
 
 // Register tools
 registerPingTool(server, client);
+registerListProjectsTool(server, client);
+registerListSpacesTool(server, client);
 
 // Start server
 async function main(): Promise<void> {
