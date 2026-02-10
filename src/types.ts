@@ -77,3 +77,92 @@ export interface LightdashExploreSummary {
   errors?: Array<{ type: string; message: string }>;
   [key: string]: unknown;
 }
+
+// ── Phase 3: Data access tool response types ─────────────────────────
+
+/** Full saved chart from GET /saved/{chartUuid} (DATA-01) */
+export interface SavedChartResponse {
+  uuid: string;
+  projectUuid: string;
+  name: string;
+  description: string | undefined;
+  tableName: string;
+  metricQuery: {
+    exploreName: string;
+    dimensions: string[];
+    metrics: string[];
+    filters: Record<string, unknown>;
+    sorts: Array<{ fieldId: string; descending: boolean }>;
+    limit: number;
+    tableCalculations: unknown[];
+    additionalMetrics: unknown[] | undefined;
+    customDimensions: unknown[] | undefined;
+  };
+  chartConfig: { type?: string; [key: string]: unknown };
+  tableConfig: { columnOrder: string[] };
+  pivotConfig: { columns: string[] } | undefined;
+  updatedAt: string;
+  spaceName: string;
+  spaceUuid: string;
+  slug: string;
+  dashboardUuid: string | null;
+  dashboardName: string | null;
+  [key: string]: unknown;
+}
+
+/** Query results from POST /saved/{chartUuid}/results or POST runQuery (DATA-02) */
+export interface QueryResultsResponse {
+  rows: Array<Record<string, { value: { raw: unknown; formatted: string } }>>;
+  fields: Record<string, { fieldType: string; type: string; [key: string]: unknown }>;
+  metricQuery: Record<string, unknown>;
+  cacheMetadata: {
+    cacheHit: boolean;
+    cacheKey?: string;
+    cacheExpiresAt?: string;
+    cacheUpdatedTime?: string;
+  };
+}
+
+/** Full explore definition from GET /projects/{uuid}/explores/{name} (DATA-03) */
+export interface ExploreResponse {
+  name: string;
+  label: string;
+  baseTable: string;
+  tags: string[];
+  targetDatabase: string;
+  type: string | undefined;
+  groupLabel: string | undefined;
+  tables: Record<string, CompiledTableResponse>;
+  joinedTables: Array<{
+    table: string;
+    sqlOn: string;
+    compiledSqlOn: string;
+    type?: string;
+    hidden?: boolean;
+    always?: boolean;
+    relationship?: string;
+  }>;
+  [key: string]: unknown;
+}
+
+/** Compiled table within an explore */
+export interface CompiledTableResponse {
+  name: string;
+  label: string;
+  description: string | undefined;
+  dimensions: Record<string, CompiledFieldResponse>;
+  metrics: Record<string, CompiledFieldResponse>;
+  [key: string]: unknown;
+}
+
+/** Compiled field (dimension or metric) within a table */
+export interface CompiledFieldResponse {
+  name: string;
+  label: string;
+  table: string;
+  type: string;
+  description: string | undefined;
+  hidden: boolean | undefined;
+  fieldType: string;
+  [key: string]: unknown;
+}
