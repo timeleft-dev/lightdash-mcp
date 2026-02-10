@@ -1,7 +1,17 @@
 {
-  "name": "lightdash-mcp-server",
+  "name": "lightdash-mcp",
   "version": "1.0.0",
+  "description": "MCP server for Lightdash — gives Claude Desktop read-only access to your Lightdash projects, charts, dashboards, and queries",
   "type": "module",
+  "license": "MIT",
+  "author": "Mikhail Gasanov <gasanovm@gmail.com>",
+  "keywords": [
+    "mcp",
+    "lightdash",
+    "claude-desktop",
+    "model-context-protocol",
+    "business-intelligence"
+  ],
   "bin": {
     "lightdash-mcp": "./build/index.js"
   },
