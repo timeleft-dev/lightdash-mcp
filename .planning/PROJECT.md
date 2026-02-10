@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A custom MCP (Model Context Protocol) server for Lightdash, built in TypeScript with stdio transport, designed for use with Claude Desktop. It replaces the broken `lightdash-mcp-server` npm package, which pollutes stdout with non-JSON-RPC output and returns massive unfiltered API payloads (413K+) that blow Claude's context window.
+A custom MCP (Model Context Protocol) server for Lightdash, built in TypeScript with stdio transport, designed for use with Claude Desktop. Provides 10 read-only tools for discovering and querying Lightdash data with aggressive server-side field filtering. Replaces the broken `lightdash-mcp-server` npm package.
 
 ## Core Value
 
@@ -12,27 +12,27 @@ Clean, filtered Lightdash data access through MCP — every tool returns only th
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Node.js MCP server using @modelcontextprotocol/sdk with stdio transport — v1.0
+- ✓ Zero stdout noise — console.log override, only JSON-RPC on stdout — v1.0
+- ✓ Env var config: LIGHTDASH_API_KEY (PAT), LIGHTDASH_API_URL (base URL) — v1.0
+- ✓ Auto-append /api/v1 to base URL if not already present — v1.0
+- ✓ Auth header: Authorization: ApiKey <token> — v1.0
+- ✓ search_charts with server-side case-insensitive filtering (7 fields) — v1.0
+- ✓ get_chart — full chart config — v1.0
+- ✓ get_chart_results — execute saved chart, return flattened rows — v1.0
+- ✓ list_projects — org projects with uuid/name/type — v1.0
+- ✓ list_spaces — project spaces with 6 filtered fields — v1.0
+- ✓ list_dashboards with optional name filter — v1.0
+- ✓ list_explores with error state handling — v1.0
+- ✓ get_explore — full explore schema (hidden fields filtered, SQL omitted) — v1.0
+- ✓ run_raw_query with native Lightdash filter/sort passthrough — v1.0
+- ✓ All API responses unwrap { results: ... } wrapper — v1.0
+- ✓ TypeScript source compiled, deployed to ~/lightdash-mcp/ — v1.0
+- ✓ Claude Desktop configuration documented — v1.0
 
 ### Active
 
-- [ ] Node.js MCP server using @modelcontextprotocol/sdk with stdio transport
-- [ ] Zero stdout noise — no console.log, only JSON-RPC on stdout
-- [ ] Env var config: LIGHTDASH_API_KEY (PAT), LIGHTDASH_API_URL (base URL)
-- [ ] Auto-append /api/v1 to base URL if not already present
-- [ ] Auth header: Authorization: ApiKey <token>
-- [ ] search_charts(projectUuid, query) — GET charts list, server-side case-insensitive name filter, return only uuid/name/spaceName/chartType/chartKind/updatedAt/slug
-- [ ] get_chart(chartUuid) — GET full chart config
-- [ ] get_chart_results(chartUuid) — POST chart results, return query rows
-- [ ] list_projects() — GET org projects, return name/uuid/warehouseType only
-- [ ] list_spaces(projectUuid) — GET project spaces
-- [ ] list_dashboards(projectUuid, query?) — GET dashboards with optional name filter, return summary only
-- [ ] list_explores(projectUuid) — GET explores, return name/label/description/tags only
-- [ ] get_explore(projectUuid, exploreName) — GET full explore schema
-- [ ] run_raw_query(projectUuid, exploreName, dimensions, metrics, filters?, sorts?, limit?) — POST runQuery with native Lightdash filter/sort format
-- [ ] All API responses unwrap { results: ... } wrapper
-- [ ] TypeScript source in ~/Documents/Lightdash MCP/, compiled output deployed to ~/lightdash-mcp/
-- [ ] Claude Desktop configuration for the server
+(None — v1.0 shipped all requirements)
 
 ### Out of Scope
 
@@ -44,27 +44,33 @@ Clean, filtered Lightdash data access through MCP — every tool returns only th
 
 ## Context
 
-- The existing `lightdash-mcp-server` npm package has two critical bugs: stdout pollution (console.log mixed with JSON-RPC) and returning full unfiltered API payloads
-- Lightdash API wraps all responses in `{ results: ... }` — every tool must unwrap this
-- The chart list endpoint returns ~413K of data; server-side filtering before returning to Claude is essential
-- Target Lightdash instance: self-hosted at a custom URL (not cloud.lightdash.com)
-- MCP SDK provides Server class and stdio transport out of the box
+Shipped v1.0 with 1,327 LOC TypeScript across 11 source files.
+Tech stack: @modelcontextprotocol/sdk v1.26+, zod v3.25+, Node.js 22 LTS (built-in fetch).
+10 tools: lightdash_ping, list_projects, list_spaces, search_charts, list_dashboards, list_explores, get_chart, get_chart_results, get_explore, run_raw_query.
+Deployed to ~/lightdash-mcp/ via deploy.sh. User confirmed working with Claude Desktop against production Lightdash.
 
 ## Constraints
 
 - **Transport**: Stdio only — Claude Desktop connects via stdin/stdout
-- **Stdout purity**: Absolutely zero non-JSON-RPC output on stdout; use stderr for logging if needed
+- **Stdout purity**: Absolutely zero non-JSON-RPC output on stdout; use stderr for logging
 - **Response size**: Every tool must filter response fields to minimize payload size
 - **Auth**: ApiKey PAT header format required by Lightdash API
+- **Query limits**: 500-row truncation on results, 60s timeout on query execution
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| TypeScript over JavaScript | Type safety, better DX with MCP SDK types | — Pending |
-| Native Lightdash filter format for run_raw_query | No abstraction layer needed, pass-through to API | — Pending |
-| Source separate from deploy dir | Dev in ~/Documents/Lightdash MCP/, deploy compiled JS to ~/lightdash-mcp/ | — Pending |
-| Server-side filtering on search_charts | 413K full payload is unusable in Claude context window | — Pending |
+| TypeScript over JavaScript | Type safety, better DX with MCP SDK types | ✓ Good |
+| Native Lightdash filter format for run_raw_query | No abstraction layer needed, pass-through to API | ✓ Good |
+| Source separate from deploy dir | Dev in ~/Documents/Lightdash MCP/, deploy compiled JS to ~/lightdash-mcp/ | ✓ Good |
+| Server-side filtering on search_charts | 413K full payload is unusable in Claude context window | ✓ Good |
+| ES2022 + Node16 module resolution | Stable ESM with built-in fetch and AbortSignal.timeout | ✓ Good |
+| Console.log override inline before imports | Guarantees stdout purity before any module loads | ✓ Good |
+| registerXTool(server, client) pattern | Clean per-file tool registration, easy to add new tools | ✓ Good |
+| type field instead of warehouseType | warehouseType not on ProjectSummary list endpoint | ✓ Good |
+| z.any() for filter passthrough | Native Lightdash format, no leaky abstraction | ✓ Good |
+| Row flattening (val?.value?.raw) | Compact LLM-friendly output from nested Lightdash format | ✓ Good |
 
 ---
-*Last updated: 2026-02-10 after initialization*
+*Last updated: 2026-02-10 after v1.0 milestone*
