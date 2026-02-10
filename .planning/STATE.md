@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Clean, filtered Lightdash data access through MCP -- every tool returns only the fields Claude needs, never raw API dumps.
-**Current focus:** v1.1 Distribution & Docs -- Defining requirements
+**Current focus:** Phase 4 - GitHub Publication & README
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements for v1.1
-Last activity: 2026-02-10 -- Milestone v1.1 started
+Phase: 4 of 4 (GitHub Publication & README) -- v1.1 milestone
+Plan: 0 of TBD in current phase
+Status: Ready to plan
+Last activity: 2026-02-10 -- v1.1 roadmap created
 
-Progress: [..........] 0%
+Progress: [########..] 80% (8 plans complete across v1.0, phase 4 plans TBD)
 
 ## Performance Metrics
 
@@ -44,22 +44,7 @@ Progress: [..........] 0%
 Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
-- [Roadmap]: 3-phase structure derived from requirement dependencies (Foundation -> Discovery -> Data Access & Deploy). Research confirmed this matches architectural dependency ordering.
-- [Roadmap]: BLDP-01 (TypeScript compilation) placed in Phase 1 as infrastructure. BLDP-02/BLDP-03 (deploy + Claude Desktop config) placed in Phase 3 as final delivery step.
-- [01-01]: Node16 module/moduleResolution (not NodeNext) for stable ESM
-- [01-01]: ES2022 target for stable built-in fetch and AbortSignal.timeout
-- [01-01]: console.log override with [redirected] prefix for stdout safety
-- [01-02]: No new dependencies for HTTP client -- built-in fetch + AbortSignal.timeout from ES2022
-- [01-02]: Debug logging shows method + relative path only, never base URL or API key
-- [01-03]: Inline console.log override in index.ts rather than calling setupStdoutGuard() for guaranteed pre-import execution
-- [01-03]: Tool files export registerXTool(server, client) functions -- clean registration pattern for Phase 2
-- [01-03]: Used import type for McpServer in tool files since only needed for type annotations
-- [02-01]: Used type field (DEFAULT/PREVIEW) instead of warehouseType on list projects endpoint since warehouseType is not on the summary response
-- [02-01]: Added all 5 Phase 2 interfaces upfront so Plan 02 does not need to modify types.ts
-- [02-02]: No new decisions needed -- followed established patterns from Plan 01
-- [03-01]: No new decisions needed -- followed established tool registration patterns from Phase 2
-- [03-02]: No new decisions needed -- followed established tool registration patterns from Phase 2 and 03-01
-- [03-03]: No new decisions needed -- followed plan as specified
+- [v1.1 Roadmap]: Single phase (Phase 4) for all 8 v1.1 requirements -- repo setup and docs are tightly coupled (README needs repo, repo needs README)
 
 ### Pending Todos
 
@@ -72,5 +57,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Completed 03-03-PLAN.md -- ALL PHASES COMPLETE
+Stopped at: v1.1 roadmap created, ready to plan phase 4
 Resume file: None

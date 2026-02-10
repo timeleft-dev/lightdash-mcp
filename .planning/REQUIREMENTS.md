@@ -1,7 +1,7 @@
 # Requirements: Lightdash MCP Server
 
 **Defined:** 2026-02-10
-**Core Value:** Clean, filtered Lightdash data access through MCP — every tool returns only the fields Claude needs, never raw API dumps.
+**Core Value:** Clean, filtered Lightdash data access through MCP -- every tool returns only the fields Claude needs, never raw API dumps.
 
 ## v1.1 Requirements
 
@@ -31,7 +31,7 @@ Requirements for v1.1 Distribution & Docs release. Each maps to roadmap phases.
 
 | Feature | Reason |
 |---------|--------|
-| npm publishing | Keep it simple — git clone for now |
+| npm publishing | Keep it simple -- git clone for now |
 | Docker support | Overkill for Claude Desktop stdio use case |
 | CI/CD pipeline | Not needed for documentation milestone |
 | Automated tests | Deferred to future milestone |
@@ -42,20 +42,20 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GH-01 | — | Pending |
-| GH-02 | — | Pending |
-| DOCS-01 | — | Pending |
-| DOCS-02 | — | Pending |
-| DOCS-03 | — | Pending |
-| DOCS-04 | — | Pending |
-| DOCS-05 | — | Pending |
-| DOCS-06 | — | Pending |
+| GH-01 | Phase 4 | Pending |
+| GH-02 | Phase 4 | Pending |
+| DOCS-01 | Phase 4 | Pending |
+| DOCS-02 | Phase 4 | Pending |
+| DOCS-03 | Phase 4 | Pending |
+| DOCS-04 | Phase 4 | Pending |
+| DOCS-05 | Phase 4 | Pending |
+| DOCS-06 | Phase 4 | Pending |
 
 **Coverage:**
 - v1.1 requirements: 8 total
-- Mapped to phases: 0
-- Unmapped: 8
+- Mapped to phases: 8
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-10*
-*Last updated: 2026-02-10 after initial definition*
+*Last updated: 2026-02-10 after v1.1 roadmap creation*
