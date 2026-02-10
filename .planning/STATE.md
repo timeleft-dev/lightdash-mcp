@@ -5,14 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Clean, filtered Lightdash data access through MCP -- every tool returns only the fields Claude needs, never raw API dumps.
-**Current focus:** v1.2 npm Distribution
+**Current focus:** Phase 5 — npm Package & Publish
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 5 of 6 (npm Package & Publish)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-02-10 — Milestone v1.2 started
+Status: Ready to plan
+Last activity: 2026-02-10 — Roadmap created for v1.2
+
+Progress: [████████████████████░░░░░░░░░░] 10/12 plans (v1.0-v1.1 complete, v1.2 starting)
 
 ## Performance Metrics
 
@@ -43,10 +45,9 @@ Last activity: 2026-02-10 — Milestone v1.2 started
 Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
-- [v1.1 Roadmap]: Single phase (Phase 4) for all 8 v1.1 requirements -- repo setup and docs are tightly coupled (README needs repo, repo needs README)
-- [04-02]: README written for non-engineers with dual JSON config examples
-- [04-02]: Troubleshooting uses expandable details/summary HTML sections
-- [04-02]: MIT license year 2025, copyright Mikhail Gasanov
+- [v1.2 Roadmap]: Two phases -- Phase 5 (package+publish) then Phase 6 (README rewrite+verification). Split because README content depends on published package name and verification depends on publish.
+- [v1.1]: README written for non-engineers with dual JSON config examples
+- [v1.1]: MIT license year 2025, copyright Mikhail Gasanov
 
 ### Pending Todos
 
@@ -59,5 +60,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Milestone v1.2 started, defining requirements
+Stopped at: v1.2 roadmap created, ready to plan Phase 5
 Resume file: None
