@@ -13,7 +13,7 @@ Build a TypeScript MCP server that gives Claude Desktop clean, filtered access t
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Stdio Infrastructure** - API client, transport, error handling, response filtering -- no tools yet ✓ (2026-02-10)
-- [ ] **Phase 2: Discovery Tools** - 5 tools for navigating Lightdash projects, charts, dashboards, spaces, explores
+- [x] **Phase 2: Discovery Tools** - 5 tools for navigating Lightdash projects, charts, dashboards, spaces, explores ✓ (2026-02-10)
 - [ ] **Phase 3: Data Access & Deployment** - 4 tools for chart data, explore schemas, ad-hoc queries, plus build and deploy
 
 ## Phase Details
@@ -47,8 +47,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md -- Phase 2 response types, list_projects tool, and list_spaces tool
-- [ ] 02-02-PLAN.md -- search_charts with server-side filtering, list_dashboards with optional query, list_explores with error handling
+- [x] 02-01-PLAN.md -- Phase 2 response types, list_projects tool, and list_spaces tool
+- [x] 02-02-PLAN.md -- search_charts with server-side filtering, list_dashboards with optional query, list_explores with error handling
 
 ### Phase 3: Data Access & Deployment
 **Goal**: Claude can retrieve chart configs, execute saved charts, inspect explore schemas, run ad-hoc queries against Lightdash, and the server is compiled and deployed for Claude Desktop use.
@@ -74,5 +74,5 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Stdio Infrastructure | 3/3 | ✓ Complete | 2026-02-10 |
-| 2. Discovery Tools | 0/2 | In progress | - |
+| 2. Discovery Tools | 2/2 | ✓ Complete | 2026-02-10 |
 | 3. Data Access & Deployment | 0/TBD | Not started | - |
