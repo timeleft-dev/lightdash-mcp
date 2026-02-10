@@ -30,16 +30,14 @@ Clean, filtered Lightdash data access through MCP — every tool returns only th
 - ✓ TypeScript source compiled, deployed to ~/lightdash-mcp/ — v1.0
 - ✓ Claude Desktop configuration documented — v1.0
 
+- ✓ Public GitHub repo (timeleft-dev/lightdash-mcp) with .gitignore and package metadata — v1.1
+- ✓ 248-line beginner-friendly README with install guide, PAT creation, Claude Desktop config, troubleshooting — v1.1
+- ✓ Optional preferences guide for CSV output and Recharts chart artifacts — v1.1
+- ✓ MIT license — v1.1
+
 ### Active
 
-#### Current Milestone: v1.1 Distribution & Docs
-
-**Goal:** Make the project installable by non-engineers via GitHub + beginner-friendly README.
-
-**Target features:**
-- GitHub repository (`lightdash-mcp`) with proper .gitignore and package metadata
-- Beginner-friendly README with step-by-step installation for Claude Desktop users
-- Optional preferences guide for CSV output and chart artifacts
+(None — v1.1 shipped all requirements)
 
 ### Out of Scope
 
@@ -51,10 +49,10 @@ Clean, filtered Lightdash data access through MCP — every tool returns only th
 
 ## Context
 
-Shipped v1.0 with 1,327 LOC TypeScript across 11 source files.
+Shipped v1.1 with 1,327 LOC TypeScript across 11 source files + 248-line README.
 Tech stack: @modelcontextprotocol/sdk v1.26+, zod v3.25+, Node.js 22 LTS (built-in fetch).
 10 tools: lightdash_ping, list_projects, list_spaces, search_charts, list_dashboards, list_explores, get_chart, get_chart_results, get_explore, run_raw_query.
-Deployed to ~/lightdash-mcp/ via deploy.sh. User confirmed working with Claude Desktop against production Lightdash.
+Public repo: github.com/timeleft-dev/lightdash-mcp. User confirmed working with Claude Desktop against production Lightdash.
 
 ## Constraints
 
@@ -78,6 +76,9 @@ Deployed to ~/lightdash-mcp/ via deploy.sh. User confirmed working with Claude D
 | type field instead of warehouseType | warehouseType not on ProjectSummary list endpoint | ✓ Good |
 | z.any() for filter passthrough | Native Lightdash format, no leaky abstraction | ✓ Good |
 | Row flattening (val?.value?.raw) | Compact LLM-friendly output from nested Lightdash format | ✓ Good |
+| git clone install path (no npm publish) | Simple for v1, avoids npm registry complexity | ✓ Good |
+| Dual JSON config examples in README | Covers both fresh and existing MCP server setups | ✓ Good |
+| Expandable troubleshooting sections | Keeps README clean while covering 6 common issues | ✓ Good |
 
 ---
-*Last updated: 2026-02-10 after v1.1 milestone start*
+*Last updated: 2026-02-10 after v1.1 milestone*

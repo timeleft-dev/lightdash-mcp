@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Clean, filtered Lightdash data access through MCP -- every tool returns only the fields Claude needs, never raw API dumps.
-**Current focus:** Phase 4 - GitHub Publication & README
+**Current focus:** v1.1 complete — planning next milestone
 
 ## Current Position
 
-Phase: 4 of 4 (GitHub Publication & README) -- v1.1 milestone
-Plan: 2 of 2 in current phase
-Status: All phases complete. Repo public, README live.
-Last activity: 2026-02-10 -- Phase 4 complete, repo made public
+Phase: All complete (v1.0 + v1.1)
+Plan: —
+Status: v1.1 milestone archived. Ready for next milestone.
+Last activity: 2026-02-10 -- v1.1 milestone completed and archived
 
 Progress: [##########] 100% (10 plans complete across v1.0 + v1.1)
 

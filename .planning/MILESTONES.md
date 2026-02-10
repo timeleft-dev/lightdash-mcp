@@ -15,3 +15,17 @@
 
 ---
 
+
+## v1.1 Distribution & Docs (Shipped: 2026-02-10)
+
+**Phases completed:** 1 phase, 2 plans
+**New files:** README.md (248 lines), LICENSE, .gitignore
+**Timeline:** 2026-02-10 (single day)
+
+**Key accomplishments:**
+- Public GitHub repo at github.com/timeleft-dev/lightdash-mcp with .gitignore and full package.json metadata
+- 248-line beginner-friendly README: 10-tool reference, step-by-step install, PAT creation guide, Claude Desktop config, 6 troubleshooting entries, optional CSV/chart preferences
+- MIT license
+
+---
+
