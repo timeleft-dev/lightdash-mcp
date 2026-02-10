@@ -9,17 +9,17 @@ Requirements for v1.1 Distribution & Docs release. Each maps to roadmap phases.
 
 ### GitHub Setup
 
-- [ ] **GH-01**: Repository `lightdash-mcp` created on GitHub with proper .gitignore (node_modules, build, .env)
-- [ ] **GH-02**: package.json updated with repository URL, description, license, and keywords
+- [x] **GH-01**: Repository `lightdash-mcp` created on GitHub with proper .gitignore (node_modules, build, .env)
+- [x] **GH-02**: package.json updated with repository URL, description, license, and keywords
 
 ### Documentation
 
-- [ ] **DOCS-01**: README covers what the server does and lists all 10 tools
-- [ ] **DOCS-02**: README has step-by-step prerequisites (Node.js install, git clone, npm install)
-- [ ] **DOCS-03**: README has step-by-step Lightdash PAT creation guide
-- [ ] **DOCS-04**: README has Claude Desktop configuration with copy-paste JSON
-- [ ] **DOCS-05**: README has troubleshooting section (common errors and fixes)
-- [ ] **DOCS-06**: README has optional section for Claude Desktop preferences (CSV tables, chart artifacts)
+- [x] **DOCS-01**: README covers what the server does and lists all 10 tools
+- [x] **DOCS-02**: README has step-by-step prerequisites (Node.js install, git clone, npm install)
+- [x] **DOCS-03**: README has step-by-step Lightdash PAT creation guide
+- [x] **DOCS-04**: README has Claude Desktop configuration with copy-paste JSON
+- [x] **DOCS-05**: README has troubleshooting section (common errors and fixes)
+- [x] **DOCS-06**: README has optional section for Claude Desktop preferences (CSV tables, chart artifacts)
 
 ## Future Requirements
 
@@ -42,14 +42,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GH-01 | Phase 4 | Pending |
-| GH-02 | Phase 4 | Pending |
-| DOCS-01 | Phase 4 | Pending |
-| DOCS-02 | Phase 4 | Pending |
-| DOCS-03 | Phase 4 | Pending |
-| DOCS-04 | Phase 4 | Pending |
-| DOCS-05 | Phase 4 | Pending |
-| DOCS-06 | Phase 4 | Pending |
+| GH-01 | Phase 4 | Complete |
+| GH-02 | Phase 4 | Complete |
+| DOCS-01 | Phase 4 | Complete |
+| DOCS-02 | Phase 4 | Complete |
+| DOCS-03 | Phase 4 | Complete |
+| DOCS-04 | Phase 4 | Complete |
+| DOCS-05 | Phase 4 | Complete |
+| DOCS-06 | Phase 4 | Complete |
 
 **Coverage:**
 - v1.1 requirements: 8 total
@@ -58,4 +58,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-10*
-*Last updated: 2026-02-10 after v1.1 roadmap creation*
+*Last updated: 2026-02-10 after phase 4 completion*

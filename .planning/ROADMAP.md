@@ -3,7 +3,7 @@
 ## Milestones
 
 - [x] **v1.0 MVP** -- Phases 1-3 (shipped 2026-02-10)
-- [ ] **v1.1 Distribution & Docs** -- Phase 4 (in progress)
+- [x] **v1.1 Distribution & Docs** -- Phase 4 (shipped 2026-02-10)
 
 ## Phases
 
@@ -20,7 +20,7 @@
 
 **Milestone Goal:** Make the project installable by non-engineers via GitHub + beginner-friendly README.
 
-- [ ] **Phase 4: GitHub Publication & README** - Project is publicly available on GitHub with docs that take a beginner from zero to working server
+- [x] **Phase 4: GitHub Publication & README** (2/2 plans) -- completed 2026-02-10
 
 ## Phase Details
 
@@ -36,8 +36,8 @@
 **Plans:** 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md -- Repository setup: .gitignore, package.json metadata, GitHub repo creation and push
-- [ ] 04-02-PLAN.md -- README and LICENSE: beginner-friendly docs with all 6 DOCS requirements
+- [x] 04-01-PLAN.md -- Repository setup: .gitignore, package.json metadata, GitHub repo creation and push
+- [x] 04-02-PLAN.md -- README and LICENSE: beginner-friendly docs with all 6 DOCS requirements
 
 ## Progress
 
@@ -49,8 +49,8 @@ Phase 4 is the sole phase for v1.1.
 | 1. Foundation & Stdio Infrastructure | v1.0 | 3/3 | Complete | 2026-02-10 |
 | 2. Discovery Tools | v1.0 | 2/2 | Complete | 2026-02-10 |
 | 3. Data Access & Deployment | v1.0 | 3/3 | Complete | 2026-02-10 |
-| 4. GitHub Publication & README | v1.1 | 0/2 | Planned | - |
+| 4. GitHub Publication & README | v1.1 | 2/2 | ✓ Complete | 2026-02-10 |
 
 ---
 *Created: 2026-02-10*
-*Last updated: 2026-02-10 after phase 4 planning*
+*Last updated: 2026-02-10 after phase 4 completion*
